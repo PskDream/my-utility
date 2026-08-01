@@ -8,4 +8,11 @@ export const tools: Tool[] = [
     icon: 'pi pi-qrcode',
     route: '/promptpay',
   },
+  {
+    id: 'fukuoka-trip',
+    name: 'แพลนทริป Fukuoka',
+    description: 'แผนเดินทาง 7 วัน Fukuoka → Yufuin → Beppu → Aso → Kumamoto',
+    icon: 'pi pi-map',
+    route: '/fukuoka-trip',
+  },
 ]

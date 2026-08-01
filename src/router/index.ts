@@ -13,6 +13,11 @@ const router = createRouter({
       name: 'promptpay',
       component: () => import('@/views/promptpay/PromptPayView.vue'),
     },
+    {
+      path: '/fukuoka-trip',
+      name: 'fukuoka-trip',
+      component: () => import('@/views/fukuoka-trip/FukuokaTripView.vue'),
+    },
   ],
 })
 
