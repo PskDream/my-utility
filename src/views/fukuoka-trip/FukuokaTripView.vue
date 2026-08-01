@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import Accordion from 'primevue/accordion'
 import AccordionPanel from 'primevue/accordionpanel'
 import AccordionHeader from 'primevue/accordionheader'
@@ -7,6 +8,8 @@ import BackHomeLink from '@/components/BackHomeLink.vue'
 import TripSummary from '@/components/fukuoka-trip/TripSummary.vue'
 import TripDaySchedule from '@/components/fukuoka-trip/TripDaySchedule.vue'
 import { tripMeta, tripDays } from '@/data/fukuoka-trip'
+
+const openDays = ref(['0'])
 </script>
 
 <template>
@@ -14,7 +17,7 @@ import { tripMeta, tripDays } from '@/data/fukuoka-trip'
     <BackHomeLink />
     <h1 class="mb-4 text-2xl font-bold">{{ tripMeta.title }}</h1>
     <TripSummary :meta="tripMeta" />
-    <Accordion :value="['0']" multiple>
+    <Accordion v-model:value="openDays" multiple>
       <AccordionPanel v-for="day in tripDays" :key="day.day" :value="String(day.day - 1)">
         <AccordionHeader>
           <div class="flex flex-col gap-0.5 text-left">
