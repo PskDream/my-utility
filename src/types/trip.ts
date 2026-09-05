@@ -44,6 +44,7 @@ export interface TripMeta {
   stats: string[]
   concept: string
   priorityWeights: TripPriorityWeight[]
+  budgetNote?: string
 }
 
 export interface TripHighlights {
