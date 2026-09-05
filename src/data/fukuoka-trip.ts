@@ -26,7 +26,7 @@ export const tripMeta: TripMeta = {
     { category: 'local', weight: 10 },
   ],
   budgetNote:
-    'งบอาหารโดยประมาณ ¥4,000–8,000 / คน / วัน (breakfast ¥500–1,000 · lunch ¥1,000–3,000 · street food/cafe ¥500–1,500 · dinner ¥2,000–5,000) — รวม 7 คน ~¥28,000–56,000/วัน ยกเว้นคืนสุดท้าย (24 พ.ย.) ที่มี Final Dinner Yakiniku ~¥10,000–15,000/คน (~¥70,000–105,000 สำหรับ 7 คน) เป็นมื้อพิเศษปิดทริป',
+    'งบอาหารโดยประมาณ ¥4,000–8,000 / คน / วัน (breakfast ¥500–1,000 · lunch ¥1,000–3,000 · street food/cafe ¥500–1,500 · dinner ¥2,000–5,000) — รวม 7 คน ~¥28,000–56,000/วัน ยกเว้นคืนสุดท้าย (24 พ.ย.) ที่มี Final Dinner Yakiniku ~¥6,000–8,000/คน (~¥42,000–56,000 สำหรับ 7 คน) เป็นมื้อปิดทริป',
 }
 
 export const tripHighlights: TripHighlights = {
@@ -38,7 +38,7 @@ export const tripHighlights: TripHighlights = {
     'Jigoku Mushi — Jigokumushikobo Kannawa (Beppu)',
     'Akaushi Lunch — Aka Gyu-don Iwasaki (Aso)',
     'Yanagibashi Rengo Market — Food Walk (Fukuoka)',
-    'Yakiniku Sudou Haruyoshi — Final Dinner (Fukuoka)',
+    'Rikaen Daimyo Honten — Final Dinner Yakiniku (Fukuoka)',
     'เดินเล่น Haruyoshi / Kego / Daimyo / Imaizumi (Fukuoka)',
     'Suizenji Joju-en / Ezu Lake Park',
   ],
@@ -466,12 +466,12 @@ export const tripDays: TripDay[] = [
       { time: '17:00–18:30', activity: 'กลับที่พัก / อาบน้ำ / เตรียมตัว' },
       {
         time: '19:00',
-        activity: '🥩🥩 FINAL DINNER — Yakiniku Sudou Haruyoshi',
-        note: 'มื้อที่จัดเต็มที่สุดใน Fukuoka · Tabelog ~3.93/450+ รีวิว · ~¥10,000–15,000/คน (course only, ควรจองล่วงหน้า) — สำหรับ 7 คนแนะนำสั่งให้มีตั้งแต่ Karubi, Rosu, Harami, เนื้อพิเศษ 2-3 จาน, Gyutan, ผัก/Kimchi, ข้าว — อย่าสั่ง A5 ทุกอย่าง ให้มีตั้งแต่ fatty → lean → harami → tongue → premium cut จะกินสนุกกว่าเยอะ',
+        activity: '🥩🥩 FINAL DINNER — Rikaen Daimyo Honten',
+        note: 'มื้อปิดทริปที่ Fukuoka · เปิดมาตั้งแต่ปี 1964 อยู่ในย่าน Daimyo พอดี (ต่อจากที่เดินมาทั้งวัน) เนื้อ Hakata Wagyu / Iki-gyu / Imari-gyu · Tabelog ~3.6/420+ รีวิว · ~¥6,000–8,000/คน · มีห้องส่วนตัวรองรับกลุ่ม 6-8 คน โทรจองล่วงหน้า (092-752-8833) — สั่งให้มีตั้งแต่ Karubi, Rosu, Harami, Gyutan, เนื้อพิเศษ, ผัก/Kimchi, ข้าว ผสมกันจะกินสนุกกว่าสั่งอย่างเดียวซ้ำ ๆ',
         categories: ['food'],
         priority: 'top',
-        mapQuery: 'Yakiniku Sudou Haruyoshi Fukuoka',
-        tabelogUrl: 'https://tabelog.com/en/fukuoka/A4001/A400103/40043061/',
+        mapQuery: 'Rikaen Daimyo Honten Fukuoka',
+        tabelogUrl: 'https://tabelog.com/en/fukuoka/A4001/A400104/40000443/',
         image: wikimediaImage('Yakiniku cooking, 2017.jpg', 'ปิ้งย่าง Yakiniku บนเตาถ่าน'),
       },
       {
