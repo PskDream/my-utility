@@ -6,8 +6,9 @@ import AccordionHeader from 'primevue/accordionheader'
 import AccordionContent from 'primevue/accordioncontent'
 import BackHomeLink from '@/components/BackHomeLink.vue'
 import TripSummary from '@/components/fukuoka-trip/TripSummary.vue'
+import TripHighlights from '@/components/fukuoka-trip/TripHighlights.vue'
 import TripDaySchedule from '@/components/fukuoka-trip/TripDaySchedule.vue'
-import { tripMeta, tripDays } from '@/data/fukuoka-trip'
+import { tripMeta, tripHighlights, tripDays } from '@/data/fukuoka-trip'
 
 const openDays = ref(['0'])
 </script>
@@ -17,11 +18,13 @@ const openDays = ref(['0'])
     <BackHomeLink />
     <h1 class="mb-4 text-2xl font-bold">{{ tripMeta.title }}</h1>
     <TripSummary :meta="tripMeta" />
+    <TripHighlights :highlights="tripHighlights" />
     <Accordion v-model:value="openDays" multiple>
       <AccordionPanel v-for="day in tripDays" :key="day.day" :value="String(day.day - 1)">
         <AccordionHeader>
           <div class="flex flex-col gap-0.5 text-left">
             <span class="font-semibold">Day {{ day.day }} — {{ day.weekday }} {{ day.date }} | {{ day.route }}</span>
+            <span class="text-[0.8rem] font-normal text-[var(--p-text-muted-color)]">{{ day.theme }}</span>
             <span v-if="day.driveInfo" class="text-[0.8rem] font-normal text-[var(--p-text-muted-color)]">{{
               day.driveInfo
             }}</span>

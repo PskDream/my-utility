@@ -10,8 +10,8 @@ export const tools: Tool[] = [
   },
   {
     id: 'fukuoka-trip',
-    name: 'แพลนทริป Fukuoka',
-    description: 'แผนเดินทาง 7 วัน Fukuoka → Yufuin → Beppu → Aso → Kumamoto',
+    name: 'แพลนทริป Kyushu',
+    description: 'แผนเดินทาง 7 วัน Fukuoka → Yufuin → Beppu → Aso → Kumamoto → Itoshima',
     icon: 'pi pi-map',
     route: '/fukuoka-trip',
   },
