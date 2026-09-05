@@ -33,5 +33,9 @@ defineProps<{ meta: TripMeta }>()
         {{ CATEGORY_INFO[item.category].emoji }} {{ CATEGORY_INFO[item.category].label }} {{ item.weight }}%
       </span>
     </div>
+    <p v-if="meta.budgetNote" class="flex items-start gap-2 text-[0.85rem] text-[var(--p-text-muted-color)]">
+      <span class="pi pi-wallet mt-0.5" />
+      <span>{{ meta.budgetNote }}</span>
+    </p>
   </div>
 </template>

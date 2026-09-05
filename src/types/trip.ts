@@ -18,6 +18,7 @@ export interface TripActivity {
   alert?: boolean
   mapQuery?: string
   image?: TripActivityImage
+  tabelogUrl?: string
 }
 
 export interface TripDay {
@@ -44,6 +45,7 @@ export interface TripMeta {
   stats: string[]
   concept: string
   priorityWeights: TripPriorityWeight[]
+  budgetNote?: string
 }
 
 export interface TripHighlights {

@@ -45,6 +45,14 @@ defineProps<{ day: TripDay }>()
               title="เปิดใน Google Maps"
               class="pi pi-map-marker text-[0.8rem] text-[var(--p-primary-color)]"
             />
+            <a
+              v-if="activity.tabelogUrl"
+              :href="activity.tabelogUrl"
+              target="_blank"
+              rel="noopener"
+              title="ดูรีวิว/เรตติ้งใน Tabelog"
+              class="pi pi-external-link text-[0.8rem] text-[var(--p-primary-color)]"
+            />
             <span
               v-if="activity.priority"
               class="rounded-full bg-[var(--p-content-hover-background)] px-2 py-0.5 text-[0.7rem] whitespace-nowrap text-[var(--p-text-muted-color)]"
