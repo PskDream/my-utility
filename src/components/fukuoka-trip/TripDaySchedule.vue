@@ -2,6 +2,7 @@
 import Message from 'primevue/message'
 import type { TripDay } from '@/types/trip'
 import { CATEGORY_INFO, PRIORITY_INFO } from '@/utils/tripCategories'
+import { googleMapsUrl } from '@/utils/maps'
 
 defineProps<{ day: TripDay }>()
 </script>
@@ -36,6 +37,14 @@ defineProps<{ day: TripDay }>()
             >
               {{ CATEGORY_INFO[category].emoji }}
             </span>
+            <a
+              v-if="activity.mapQuery"
+              :href="googleMapsUrl(activity.mapQuery)"
+              target="_blank"
+              rel="noopener"
+              title="เปิดใน Google Maps"
+              class="pi pi-map-marker text-[0.8rem] text-[var(--p-primary-color)]"
+            />
             <span
               v-if="activity.priority"
               class="rounded-full bg-[var(--p-content-hover-background)] px-2 py-0.5 text-[0.7rem] whitespace-nowrap text-[var(--p-text-muted-color)]"
@@ -46,6 +55,23 @@ defineProps<{ day: TripDay }>()
           <div v-if="activity.note" class="text-[0.85rem] text-[var(--p-text-muted-color)]">
             {{ activity.note }}
           </div>
+          <a
+            v-if="activity.image"
+            :href="activity.image.creditUrl"
+            target="_blank"
+            rel="noopener"
+            class="mt-1 block w-fit"
+          >
+            <img
+              :src="activity.image.url"
+              :alt="activity.image.alt"
+              loading="lazy"
+              class="h-36 max-w-full rounded-md object-cover sm:h-44"
+            />
+            <span class="mt-0.5 block text-[0.7rem] text-[var(--p-text-muted-color)]"
+              >ภาพ: {{ activity.image.creditLabel }}</span
+            >
+          </a>
         </div>
       </div>
     </div>
