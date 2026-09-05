@@ -2,6 +2,13 @@ export type TripCategory = 'scenic' | 'walking' | 'food' | 'park' | 'cafe' | 'lo
 
 export type TripPriority = 'top' | 'secondary' | 'optional'
 
+export interface TripActivityImage {
+  url: string
+  alt: string
+  creditLabel: string
+  creditUrl: string
+}
+
 export interface TripActivity {
   time: string
   activity: string
@@ -9,6 +16,8 @@ export interface TripActivity {
   categories?: TripCategory[]
   priority?: TripPriority
   alert?: boolean
+  mapQuery?: string
+  image?: TripActivityImage
 }
 
 export interface TripDay {

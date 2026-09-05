@@ -1,4 +1,14 @@
-import type { TripDay, TripHighlights, TripMeta } from '@/types/trip'
+import type { TripActivityImage, TripDay, TripHighlights, TripMeta } from '@/types/trip'
+import { wikimediaFilePath, wikimediaFilePageUrl } from '@/utils/maps'
+
+function wikimediaImage(fileName: string, alt: string): TripActivityImage {
+  return {
+    url: wikimediaFilePath(fileName),
+    alt,
+    creditLabel: 'Wikimedia Commons',
+    creditUrl: wikimediaFilePageUrl(fileName),
+  }
+}
 
 export const tripMeta: TripMeta = {
   title: 'แพลนทริป Kyushu',
@@ -6,7 +16,7 @@ export const tripMeta: TripMeta = {
   routeSummary: 'Fukuoka → Yufuin → Beppu → Aso → Kumamoto → Fukuoka (+ Itoshima day trip)',
   stats: ['7 คน', 'รถเช่า 2 คัน'],
   concept:
-    'Scenic > Walking > Food > Park > Cafe > Local — เน้น 60% Experience/Scenic/Food/Local, 40% Landmark ไม่ใช่ทริปที่ต้องไปให้ครบ แต่เป็นทริปที่กลับมาแล้วรู้สึกว่าได้สัมผัส Kyushu จริง ๆ',
+    'Scenic > Walking > Food > Park > Cafe > Local (Market = ลูกเล่นย่อยของ Food + Local) — เน้น 60% Experience/Scenic/Food/Local, 40% Landmark ไม่ใช่ทริปที่ต้องไปให้ครบ แต่เป็นทริปที่กลับมาแล้วรู้สึกว่าได้สัมผัส Kyushu จริง ๆ',
   priorityWeights: [
     { category: 'scenic', weight: 25 },
     { category: 'walking', weight: 20 },
@@ -24,11 +34,21 @@ export const tripHighlights: TripHighlights = {
     'Sakurai Futamigaura — Itoshima Coast',
     'Hyotan Onsen',
     'Akaushi Lunch (Aso)',
+    'Yanagibashi Rengo Market — Food Walk (Fukuoka)',
     'เดินเล่น Kego / Daimyo / Imaizumi (Fukuoka)',
     'Suizenji Joju-en / Ezu Lake Park',
   ],
   secondary: ['Kusasenri', 'Kannawa', 'Yusentei Park', 'Ohori Park', 'Nakasu Yatai', 'Sagiridai', 'Beppu Jigoku Meguri'],
-  optional: ['Aso Volcano Museum', 'Kumamoto Castle', 'Canal City', 'LaLaport', 'Donki', 'Fukuoka Castle Ruins'],
+  optional: [
+    'Aso Volcano Museum',
+    'Kumamoto Castle',
+    'Nagahama Fish Market / Uoza (เช็ค Citizen\'s Appreciation Day ปี 2026 ก่อน)',
+    'เดินเล่นย่าน Yoshizuka + Little Asia Market (คืนที่กลับที่พักเร็ว)',
+    'Canal City',
+    'LaLaport',
+    'Donki',
+    'Fukuoka Castle Ruins',
+  ],
 }
 
 export const tripDays: TripDay[] = [
@@ -41,7 +61,7 @@ export const tripDays: TripDay[] = [
     feel: '🌿 Yufuin scenery · 🚶 เดินเล่น · 🍜 มื้อแรกใน Kyushu · ☕ คาเฟ่ · 🚗 Scenic drive · 🏨 Beppu',
     driveInfo: 'Fukuoka→Yufuin ~2 ชม. (Oita Expressway) · Yufuin→Beppu ~45 นาที (Yamanami Highway)',
     activities: [
-      { time: '07:35', activity: 'ถึงสนามบิน Fukuoka (International Terminal)' },
+      { time: '07:35', activity: 'ถึงสนามบิน Fukuoka (International Terminal)', mapQuery: 'Fukuoka Airport International Terminal' },
       { time: '07:35–08:20', activity: 'ตม. + รับกระเป๋า', note: '7 คนเผื่อเวลาไว้ 45 นาที' },
       { time: '08:20–09:00', activity: 'รับรถเช่า 2 คัน', note: 'เช็ครอบรถ ตั้ง ETC ตั้ง Google Maps' },
       { time: '09:00–09:30', activity: 'Lawson ซื้ออาหารเช้า + น้ำ' },
@@ -51,6 +71,7 @@ export const tripDays: TripDay[] = [
         activity: 'ถึง Yufuin Station — เริ่มเดิน',
         note: 'ไม่ต้องรีบเอารถไปจอดหน้าทุกจุด เริ่มจากเดินจาก Station เข้าเมือง',
         categories: ['walking'],
+        mapQuery: 'Yufuin Station',
       },
       {
         time: '12:00–13:00',
@@ -58,6 +79,7 @@ export const tripDays: TripDay[] = [
         note: 'เมนู mabushi เฉพาะถิ่น · ร้านเล็ก 7 คนควรโทรจองล่วงหน้า ถ้าคิวยาวเกิน 20 นาทีเปลี่ยนร้านสำรอง',
         categories: ['food'],
         priority: 'secondary',
+        mapQuery: 'Yufu Mabushi Shin Yufuin Ekimae',
       },
       {
         time: '13:00–14:00',
@@ -71,6 +93,7 @@ export const tripDays: TripDay[] = [
         activity: 'Yunotsubo Kaido',
         note: 'จำกัดเวลา 45 นาที เน้น "เห็นอะไรน่ากินก็ซื้อ" ไม่ต้องซื้อของฝากให้ครบ',
         categories: ['walking', 'local'],
+        mapQuery: 'Yunotsubo Kaido Yufuin',
       },
       {
         time: '14:45–15:30',
@@ -78,6 +101,8 @@ export const tripDays: TripDay[] = [
         note: 'ใบไม้เปลี่ยนสีเป็น bonus ไม่การันตี peak ช่วงนี้',
         categories: ['scenic', 'walking'],
         priority: 'top',
+        mapQuery: 'Lake Kinrin Yufuin',
+        image: wikimediaImage('Lake Kinrin in Yufuin, Oita - Aug 24, 2018 (1).jpg', 'Lake Kinrin ใน Yufuin'),
       },
       {
         time: '15:30–16:10',
@@ -92,9 +117,15 @@ export const tripDays: TripDay[] = [
         note: 'ชมวิว Yufuin Basin จากมุมสูง 20-30 นาทีพอ',
         categories: ['scenic'],
         priority: 'secondary',
+        mapQuery: 'Sagiridai Observatory Yufuin',
       },
       { time: '17:00', activity: 'ออกเดินทาง Yufuin → Beppu', note: 'ทาง Yamanami Highway' },
-      { time: '17:45', activity: 'Check-in ที่พัก Beppu', note: '6-3 Noguchi Motomachi, Beppu' },
+      {
+        time: '17:45',
+        activity: 'Check-in ที่พัก Beppu',
+        note: '6-3 Noguchi Motomachi, Beppu',
+        mapQuery: '6-3 Noguchi Motomachi Beppu',
+      },
       {
         time: '19:00',
         activity: 'Dinner — Toriten / Chicken Tempura / Beppu local food',
@@ -122,12 +153,14 @@ export const tripDays: TripDay[] = [
         note: 'ไอน้ำ ถนนเนิน โรงอาบน้ำ steam cooking — ย่านที่เห็นเอกลักษณ์ Beppu ชัดที่สุด',
         categories: ['local', 'walking'],
         priority: 'secondary',
+        mapQuery: 'Kannawa Onsen Beppu',
       },
       {
         time: '12:30–13:30',
         activity: 'Lunch — Jigoku Mushi (อาหารนึ่งไอน้ำพุร้อน)',
         categories: ['food', 'local'],
         priority: 'top',
+        mapQuery: 'Jigoku Mushi Kobo Kannawa',
       },
       {
         time: '13:30–15:00',
@@ -135,6 +168,7 @@ export const tripDays: TripDay[] = [
         note: 'Quality > Quantity ไม่ต้องครบ 7 บ่อ ถ้าเริ่มเบื่อตัดได้เลย',
         categories: ['scenic'],
         priority: 'secondary',
+        mapQuery: 'Umi Jigoku Beppu',
       },
       {
         time: '15:00–15:40',
@@ -149,6 +183,7 @@ export const tripDays: TripDay[] = [
         categories: ['scenic'],
         priority: 'secondary',
         alert: true,
+        mapQuery: 'Beppu Ropeway',
       },
       {
         time: '17:30–20:00',
@@ -156,6 +191,8 @@ export const tripDays: TripDay[] = [
         note: 'เปิดถึง 01:00 (large bath ถึงเที่ยงคืน) ไม่ต้องรีบ — Large Bath / Outdoor Bath / Steam Bath / Sand Bath',
         categories: ['onsen'],
         priority: 'top',
+        mapQuery: 'Hyotan Onsen Beppu',
+        image: wikimediaImage('Hyotan Onsen (5011201676).jpg', 'ทางเข้า Hyotan Onsen ที่ Beppu'),
       },
       {
         time: '20:00–21:00',
@@ -186,6 +223,11 @@ export const tripDays: TripDay[] = [
         note: 'อากาศเย็น เตรียมแจ็คเก็ต',
         categories: ['scenic'],
         priority: 'top',
+        mapQuery: 'Daikanbo Aso',
+        image: wikimediaImage(
+          'A view of the five mountains of Aso from Daikanbo viewpoint.jpg',
+          'วิวห้ายอดเขา Aso จาก Daikanbo',
+        ),
       },
       { time: '12:15–13:00', activity: 'Scenic drive ผ่าน Aso landscape', categories: ['scenic'] },
       {
@@ -194,21 +236,29 @@ export const tripDays: TripDay[] = [
         note: 'มื้อ destination ของวัน ร้านดังคนเยอะ ควรโทรจอง/เช็คคิวล่วงหน้าสำหรับ 7 คน',
         categories: ['food'],
         priority: 'top',
+        mapQuery: 'Akaushi beef restaurant Aso',
       },
       {
         time: '14:15–15:15',
         activity: 'Kusasenri — ทุ่งหญ้า',
         categories: ['scenic', 'walking'],
         priority: 'secondary',
+        mapQuery: 'Kusasenri Aso',
       },
       {
         time: '15:15–15:45',
         activity: 'Aso Volcano Museum (ถ้าฝนตก/หนาวมาก/สนใจ)',
         note: 'ถ้าอากาศดี เลือกวิวก่อน ไม่ต้องเข้า',
         priority: 'optional',
+        mapQuery: 'Aso Volcano Museum',
       },
       { time: '15:45–17:30', activity: 'ขับ Aso → Kumamoto' },
-      { time: '18:00', activity: 'Check-in Kumamoto', note: 'Kasuga 1-chome, 5-3' },
+      {
+        time: '18:00',
+        activity: 'Check-in Kumamoto',
+        note: 'Kasuga 1-chome, 5-3',
+        mapQuery: 'Kasuga 1-chome Chuo-ku Kumamoto',
+      },
       {
         time: '19:00',
         activity: 'Kumamoto Night — Ramen / Basashi / Karashi Renkon / Izakaya + เดินเมือง',
@@ -234,12 +284,15 @@ export const tripDays: TripDay[] = [
         activity: 'Kumamoto Castle',
         note: 'ดูตอนเช้าแทนตอนเย็น ไม่ต้องพยายามดูทุกห้อง 1.5-2 ชม.พอ',
         priority: 'secondary',
+        mapQuery: 'Kumamoto Castle',
       },
       {
         time: '10:45–12:00',
         activity: 'Suizenji Joju-en',
         categories: ['park', 'scenic', 'walking'],
         priority: 'top',
+        mapQuery: 'Suizenji Jojuen Kumamoto',
+        image: wikimediaImage('Kumamoto Suizenji-jojuen01n4272.jpg', 'สวน Suizenji Joju-en ที่ Kumamoto'),
       },
       {
         time: '12:00–13:30',
@@ -247,16 +300,24 @@ export const tripDays: TripDay[] = [
         note: '⭐ ตรงกับงาน Kumamoto Hanahaku 2026 (20-29 พ.ย.) ที่ใช้ Ezu Lake Park เป็นพื้นที่หลัก — ถ้าเวลาไม่พอ เลือกอย่างใดอย่างหนึ่งระหว่าง Suizenji กับ Ezu Park ให้ยาวขึ้น แทนที่จะรีบทั้งคู่',
         categories: ['park', 'local', 'walking'],
         priority: 'top',
+        mapQuery: 'Ezu Lake Kumamoto',
       },
       { time: '13:30–14:30', activity: 'Lunch Kumamoto (local ไม่ต้องหรู)', categories: ['food'] },
       { time: '14:30–17:00', activity: 'ขับ Kumamoto → Fukuoka' },
-      { time: '17:00–18:00', activity: 'Check-in Fukuoka', note: 'Yoshizuka, Hakata Ward' },
+      {
+        time: '17:00–18:00',
+        activity: 'Check-in Fukuoka',
+        note: 'Yoshizuka, Hakata Ward',
+        mapQuery: 'Yoshizuka Hakata Ward Fukuoka',
+      },
       {
         time: '19:00',
         activity: 'Hakata Night — Hakata Ramen / Motsunabe / Seafood + เดินเล่น Hakata',
         categories: ['food', 'local'],
       },
     ],
+    callout:
+      'ที่พักอยู่ย่าน Yoshizuka ซึ่งมีความ residential/multicultural กว่า Tenjin — คืนไหนกลับที่พักเร็ว ลองเดินเล่นแถวนี้ + แวะ Little Asia Market แทนการไปห้างอีกรอบ',
   },
   {
     day: 5,
@@ -274,6 +335,8 @@ export const tripDays: TripDay[] = [
         note: 'เสาโทริอิกลางทะเล + หินคู่ฟูฟุอิวะ',
         categories: ['scenic'],
         priority: 'top',
+        mapQuery: 'Sakurai Futamigaura Itoshima',
+        image: wikimediaImage('Sakurai Futamigaura.jpg', 'เสาโทริอิกลางทะเลที่ Sakurai Futamigaura'),
       },
       {
         time: '11:00–12:00',
@@ -311,40 +374,62 @@ export const tripDays: TripDay[] = [
     day: 6,
     weekday: 'อังคาร',
     date: '24 พ.ย.',
-    route: 'Fukuoka Local Life',
-    theme: 'City Life — วันเดินเมือง ไม่ใช้รถก็ได้',
-    feel: '🌳 Ohori Park · 🚶 Kego/Daimyo/Imaizumi · ☕ คาเฟ่ · 🌳 Yusentei · 🍜 Yatai',
+    route: 'Fukuoka Food & Local Day',
+    theme: 'City Life — วันเดินเมือง + ตลาด ไม่ใช้รถก็ได้',
+    feel: '🐟 Yanagibashi Market · 🌳 Ohori Park · 🚶 Kego/Daimyo/Imaizumi · ☕ คาเฟ่ · 🌳 Yusentei · 🍜 Yatai',
     activities: [
       {
-        time: '09:00–11:00',
-        activity: 'Ohori Park → เดินรอบทะเลสาบ → Japanese Garden → Maizuru Park',
-        note: 'ไม่ต้องเข้า Museum',
+        time: '08:00–09:30',
+        activity: '🐟 Yanagibashi Rengo Market — Food Walk',
+        note: '"ครัวของ Hakata" ตลาดสด + ร้านอาหารทะเล/ของแห้ง มีคนท้องถิ่นมาซื้อของจริง ไม่ต้องตั้งใจกินมื้อใหญ่ เดินชิมไปเรื่อย ๆ (ซาชิมิ ของกินเล่น ข้าว/ของท้องถิ่น เครื่องดื่ม) — ตลาดเปิด ~08:00–18:00 แต่ร้านแต่ละร้านเวลาไม่เท่ากัน มาเช้าจะเห็นบรรยากาศดีที่สุด',
+        categories: ['food', 'local'],
+        priority: 'top',
+        mapQuery: 'Yanagibashi Rengo Market Fukuoka',
+        image: wikimediaImage('Yanagibashi Rengo Ichiba by LWY in Fukuoka.jpg', 'บรรยากาศตลาด Yanagibashi Rengo'),
+      },
+      {
+        time: '09:30–10:30',
+        activity: 'เดินจาก Yanagibashi → Haruyoshi → Kego → Daimyo',
+        note: 'เปลี่ยนจากตลาดสดเข้าสู่ย่านเมืองแบบ natural',
+        categories: ['walking', 'local'],
+      },
+      { time: '10:30–11:30', activity: 'คาเฟ่', categories: ['cafe'] },
+      {
+        time: '12:00–14:00',
+        activity: 'Ohori Park + Japanese Garden',
+        note: 'เดินรอบทะเลสาบ → Japanese Garden ไม่ต้องเข้า Museum',
         categories: ['park', 'walking', 'scenic'],
         priority: 'top',
+        mapQuery: 'Ohori Park Fukuoka',
       },
-      { time: '11:30–12:30', activity: 'Lunch', categories: ['food'] },
+      { time: '14:00–15:00', activity: 'Lunch', categories: ['food'] },
       {
-        time: '13:00–15:30',
-        activity: 'เดินย่าน Kego → Daimyo → Imaizumi',
+        time: '15:00–16:00',
+        activity: 'เดินต่อ Daimyo → Imaizumi → ร้านเล็ก ๆ',
         note: 'ดูคน Fukuoka ใช้ชีวิต ไม่ใช่ไปห้าง',
         categories: ['walking', 'local'],
         priority: 'top',
+        mapQuery: 'Daimyo Fukuoka',
+        image: wikimediaImage(
+          'Kon-ya-machi Yokochō the ENE view from about the middle Daimyō 1-chōme Chūō-ku Fukuoka 20250605.jpg',
+          'ซอยเล็กย่าน Daimyō, Fukuoka',
+        ),
       },
-      { time: '14:00', activity: 'คาเฟ่ (เลือกตามอารมณ์ระหว่างเดิน)', categories: ['cafe'] },
       {
-        time: '15:30–17:00',
+        time: '16:00–17:30',
         activity: 'Yusentei Park',
         note: 'Japanese garden + เมเปิล ~150 ต้น ช่วง autumn foliage',
         categories: ['park', 'scenic'],
         priority: 'secondary',
+        mapQuery: 'Yusentei Park Fukuoka',
       },
-      { time: '18:00–19:00', activity: 'Dinner', categories: ['food'] },
       {
-        time: '19:30',
-        activity: 'Nakasu Yatai',
+        time: '18:30',
+        activity: 'Nakasu Yatai (มื้อเย็น)',
         note: 'เดินกินหลายร้าน ไม่นั่งร้านเดียว 2 ชม. — ร้านเล็ก 7 คนอาจต้องแยก 2 กลุ่ม',
         categories: ['food', 'local'],
         priority: 'top',
+        mapQuery: 'Nakasu Yatai Fukuoka',
       },
       {
         time: 'ช่วงว่าง',
@@ -369,6 +454,7 @@ export const tripDays: TripDay[] = [
         activity: 'Taxi ไปสนามบิน',
         note: 'ต้องจองคืนก่อน 7 คน + กระเป๋า = 3 คัน',
         alert: true,
+        mapQuery: 'Fukuoka Airport',
       },
       { time: '07:00–07:30', activity: 'Check-in + โหลดกระเป๋า' },
       { time: '07:30–08:00', activity: 'ตม. ขาออก' },
