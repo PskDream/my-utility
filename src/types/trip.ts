@@ -18,6 +18,7 @@ export interface TripActivity {
   alert?: boolean
   mapQuery?: string
   image?: TripActivityImage
+  tabelogUrl?: string
 }
 
 export interface TripDay {

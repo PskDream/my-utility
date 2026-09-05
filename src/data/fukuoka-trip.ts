@@ -96,6 +96,7 @@ export const tripDays: TripDay[] = [
         categories: ['food'],
         priority: 'secondary',
         mapQuery: 'Yufu Mabushi Shin Yufuin Ekimae',
+        tabelogUrl: 'https://tabelog.com/en/oita/A4402/A440201/44005142/',
       },
       {
         time: '13:00–14:00',
@@ -149,6 +150,8 @@ export const tripDays: TripDay[] = [
         categories: ['food'],
         priority: 'secondary',
         mapQuery: 'Toriten Shokunin Wataru Beppu',
+        tabelogUrl: 'https://tabelog.com/en/oita/A4402/A440202/44002116/',
+        image: wikimediaImage('Toriten.JPG', 'จานทอริเท็น (toriten) ไก่ทอดสไตล์ Oita'),
       },
       { time: '21:00', activity: 'เดินเล่นย่านสถานี Beppu ตอนกลางคืน (ถ้ายังไม่เหนื่อย)', categories: ['local'] },
     ],
@@ -180,6 +183,7 @@ export const tripDays: TripDay[] = [
         categories: ['food', 'local'],
         priority: 'top',
         mapQuery: 'Jigoku Mushi Kobo Kannawa',
+        tabelogUrl: 'https://tabelog.com/en/oita/A4402/A440202/44004949/',
       },
       {
         time: '13:30–15:00',
@@ -261,6 +265,7 @@ export const tripDays: TripDay[] = [
         categories: ['food'],
         priority: 'top',
         mapQuery: 'Aka Gyu-don Iwasaki Aso',
+        tabelogUrl: 'https://tabelog.com/en/kumamoto/A4302/A430201/43013029/',
       },
       {
         time: '14:15–15:15',
@@ -290,6 +295,8 @@ export const tripDays: TripDay[] = [
         categories: ['food', 'local'],
         priority: 'top',
         mapQuery: 'Kumamoto Ramen Kokutei Honten',
+        tabelogUrl: 'https://tabelog.com/en/kumamoto/A4301/A430101/43000091/',
+        image: wikimediaImage('Kumamoto ramen by woinary in Kumamoto.jpg', 'ราเมง Kumamoto tonkotsu'),
       },
       {
         time: '20:30',
@@ -298,6 +305,8 @@ export const tripDays: TripDay[] = [
         categories: ['food', 'local'],
         priority: 'optional',
         mapQuery: 'Kumamoto Basashi Agura',
+        tabelogUrl: 'https://tabelog.com/en/kumamoto/A4301/A430101/43015714/',
+        image: wikimediaImage('Basashi nigiri.jpg', 'บาซาชิ (เนื้อม้าดิบ) สไตล์ Kumamoto'),
       },
     ],
     callout:
@@ -385,6 +394,7 @@ export const tripDays: TripDay[] = [
         categories: ['food'],
         priority: 'top',
         mapQuery: 'Itoshima Seafood Restaurant Futamigaura',
+        tabelogUrl: 'https://tabelog.com/en/fukuoka/A4001/A400203/40064991/',
       },
       {
         time: '13:30–15:00',
@@ -450,6 +460,8 @@ export const tripDays: TripDay[] = [
         categories: ['food'],
         priority: 'top',
         mapQuery: 'Shin Shin Ramen Tenjin Fukuoka',
+        tabelogUrl: 'https://tabelog.com/en/fukuoka/A4001/A400103/40004980/',
+        image: wikimediaImage('Hakata ramen bowl closeup.jpg', 'ราเมง Hakata tonkotsu'),
       },
       {
         time: '15:00–16:00',
@@ -478,6 +490,8 @@ export const tripDays: TripDay[] = [
         categories: ['food'],
         priority: 'top',
         mapQuery: 'Hakata Motsunabe Tokunagaya Souhonten',
+        tabelogUrl: 'https://tabelog.com/en/fukuoka/A4001/A400101/40056861/',
+        image: wikimediaImage('Motsunabe.jpg', 'หม้อไฟ Motsunabe'),
       },
       {
         time: '20:00',
