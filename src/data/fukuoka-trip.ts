@@ -16,7 +16,7 @@ export const tripMeta: TripMeta = {
   routeSummary: 'Fukuoka → Hita → Beppu → Aso → Kumamoto → Kurume → Fukuoka (+ Kitakyushu day trip)',
   stats: ['7 คน', 'รถเช่า 2 คัน (19–22 พ.ย.)'],
   concept:
-    'Scenic > Walking > Food > Park > Cafe > Local (Market = ลูกเล่นย่อยของ Food + Local) — เน้น 60% Experience/Scenic/Food/Local, 40% Landmark ไม่ใช่ทริปที่ต้องไปให้ครบ แต่เป็นทริปที่กลับมาแล้วรู้สึกว่าได้สัมผัส Kyushu จริง ๆ เนื้อจริงจังมี Akaushi ที่ Aso เป็นหลัก (Final Dinner คืนสุดท้ายที่ Fukuoka ยังรอเลือกร้าน) ที่เหลือให้แต่ละเมืองมี character อาหารของตัวเอง',
+    'Scenic > Walking > Food > Park > Cafe > Local (Market = ลูกเล่นย่อยของ Food + Local) — เน้น 60% Experience/Scenic/Food/Local, 40% Landmark ไม่ใช่ทริปที่ต้องไปให้ครบ แต่เป็นทริปที่กลับมาแล้วรู้สึกว่าได้สัมผัส Kyushu จริง ๆ เนื้อจริงจังมีแค่ 2 มื้อ (Akaushi ที่ Aso + Yakiniku ปิดทริปที่ Rikaen, Fukuoka) ที่เหลือให้แต่ละเมืองมี character อาหารของตัวเอง',
   priorityWeights: [
     { category: 'scenic', weight: 25 },
     { category: 'walking', weight: 20 },
@@ -26,7 +26,7 @@ export const tripMeta: TripMeta = {
     { category: 'local', weight: 10 },
   ],
   budgetNote:
-    'งบอาหารโดยประมาณ ¥4,000–8,000 / คน / วัน (breakfast ¥500–1,000 · lunch ¥1,000–3,000 · street food/cafe ¥500–1,500 · dinner ¥2,000–5,000) — รวม 7 คน ~¥28,000–56,000/วัน ยกเว้นคืนสุดท้าย (24 พ.ย.) ที่เป็น Final Dinner ปิดทริป (ยังไม่ได้เลือกร้าน งบขึ้นกับร้านที่เลือก) · วันที่ 23 พ.ย. มีค่า JR + แท็กซี่ระยะสั้น + เคเบิลคาร์ Sarakura เพิ่ม',
+    'งบอาหารโดยประมาณ ¥4,000–8,000 / คน / วัน (breakfast ¥500–1,000 · lunch ¥1,000–3,000 · street food/cafe ¥500–1,500 · dinner ¥2,000–5,000) — รวม 7 คน ~¥28,000–56,000/วัน ยกเว้นคืนสุดท้าย (24 พ.ย.) ที่มี Final Dinner Yakiniku ที่ Rikaen ~¥6,000–8,000/คน (~¥42,000–56,000 สำหรับ 7 คน) · วันที่ 23 พ.ย. มีค่า JR + แท็กซี่ระยะสั้น + เคเบิลคาร์ Sarakura เพิ่ม',
 }
 
 export const tripHighlights: TripHighlights = {
@@ -40,6 +40,7 @@ export const tripHighlights: TripHighlights = {
     'Akaushi Lunch — Aka Gyu-don Iwasaki (Aso)',
     'เดินช้อป Daimyo / Imaizumi / Tenjin — เสื้อผ้า รองเท้า แผ่นเสียง โมเดล (Fukuoka)',
     'ν Gundam ขนาดจริง — LaLaport Fukuoka',
+    'Rikaen Daimyo Honten — Final Dinner Yakiniku (Fukuoka)',
     'Suizenji Joju-en / Ezu Lake Park',
   ],
   secondary: [
@@ -477,9 +478,9 @@ export const tripDays: TripDay[] = [
     day: 6,
     weekday: 'อังคาร',
     date: '24 พ.ย.',
-    route: 'Fukuoka Local + Shopping → Gundam → Final Dinner',
-    theme: 'Food + Shopping Day — ปิดทริปด้วย Final Dinner',
-    feel: '🛍️ ช้อป Daimyo–Imaizumi–Tenjin · 🍜 Ramen เบา ๆ · 🤖 ν Gundam ที่ LaLaport · 🍽️ Final Dinner (รอเลือกร้าน)',
+    route: 'Fukuoka Local + Shopping → Final Dinner → Gundam',
+    theme: 'Food + Shopping Day — ปิดทริปด้วย 🥩 Final Dinner + Gundam',
+    feel: '🛍️ ช้อป Daimyo–Imaizumi–Tenjin · 🍜 Ramen เบา ๆ · 🥩🥩 Final Dinner Yakiniku ที่ Rikaen · 🤖 ν Gundam รอบกลางคืนที่ LaLaport',
     activities: [
       {
         time: '09:30–10:15',
@@ -519,57 +520,42 @@ export const tripDays: TripDay[] = [
         image: wikimediaImage('Hakata ramen bowl closeup.jpg', 'ราเมง Hakata tonkotsu'),
       },
       {
-        time: '14:00–16:00',
+        time: '14:00–17:00',
         activity: '🛍️ ช้อป Tenjin',
-        note: 'ห้าง Parco (มี Tower Records) / Iwataya / Daimaru / Solaria + ถนนใต้ดิน Tenjin Chikagai · โมเดล/ของสะสมมือสองที่ Mandarake Fukuoka',
+        note: 'ห้าง Parco (มี Tower Records) / Iwataya / Daimaru / Solaria + ถนนใต้ดิน Tenjin Chikagai · โมเดล/ของสะสมมือสองที่ Mandarake Fukuoka · ถุงช้อปปิ้งเยอะ ฝากตู้ล็อกเกอร์ที่สถานี Tenjin ก่อนไปกินข้าว',
         categories: ['local'],
         priority: 'top',
         mapQuery: 'Mandarake Fukuoka',
         image: wikimediaImage('View of Iwataya at night 20131228.jpg', 'ห้าง Iwataya ย่าน Tenjin ตอนกลางคืน'),
       },
       {
-        time: '16:00–17:00',
-        activity: 'Ohori Park (ถ้ายังมีแรง)',
-        note: 'เดินเล่นสั้น ๆ ตอนแดดเย็น — ถ้าถุงช้อปปิ้งเยอะ ใช้ช่วงนี้แวะทิ้งของที่ที่พักแทน แล้วค่อยไป LaLaport',
-        categories: ['park', 'walking', 'scenic'],
-        priority: 'optional',
-        mapQuery: 'Ohori Park Fukuoka',
-        image: wikimediaImage('Ōhori Park Loop Path The promenade Ōhorikōen Chūō-ku Fukuoka 20260611 161535.jpg', 'ทางเดินรอบสวน Ohori Park'),
-      },
-      { time: '17:00–17:30', activity: 'แท็กซี่ 2 คันไป LaLaport Fukuoka', note: 'ไม่มีสถานีรถไฟใกล้ ๆ — แท็กซี่ง่ายสุดสำหรับ 7 คน' },
-      {
         time: '17:30–19:00',
-        activity: '🤖 LaLaport Fukuoka — ν Gundam ขนาดจริง + ช้อป',
-        note: 'Gundam สูง ~24.8 ม. ดูฟรี · โชว์กลางวันทุกต้นชั่วโมงถึง 18:00 · Gunpla/ของ limited ที่ Gundam Side-F · มีร้านเสื้อผ้า/รองเท้าในห้างด้วย',
+        activity: '🥩🥩 FINAL DINNER — Rikaen Daimyo Honten',
+        note: 'ร้าน yakiniku สไตล์เกาหลีเก่าแก่ตั้งแต่ปี 1964 · Tabelog ~3.58/430 รีวิว ติด Tabelog Yakiniku 100 (2018/2020/2021) · ซื้อ Hakata Wagyu + Iki-gyu มาทั้งตัวจากการประมูล ตัวเด่นคือ Harami (skirt) ในคอร์สพรีเมียม · ~¥6,000–8,000/คน · Daimyo 2-3-12 · 200 ที่นั่ง มีห้องส่วนตัว 2–30+ คน · 6 คนขึ้นไปต้องจอง โทร 092-752-8833 · ปิดพุธที่ 1 และ 3 ของเดือน (24 พ.ย. อังคาร เปิด) · เปิด 11:30–22:30 · รับบัตรเครดิต · สั่งไล่ fatty → lean → harami → tongue → premium cut จะกินสนุกกว่าสั่ง A5 ทุกจาน',
+        categories: ['food'],
+        priority: 'top',
+        mapQuery: 'Rikaen Daimyo Honten Fukuoka',
+        tabelogUrl: 'https://tabelog.com/en/fukuoka/A4001/A400104/40000443/',
+        image: wikimediaImage('Yakiniku cooking, 2017.jpg', 'ปิ้งย่าง Yakiniku บนเตาถ่าน'),
+      },
+      { time: '19:00–19:30', activity: 'แท็กซี่ 2 คันไป LaLaport Fukuoka', note: 'ไม่มีสถานีรถไฟใกล้ ๆ — แท็กซี่ง่ายสุดสำหรับ 7 คน (แวะหยิบของจากล็อกเกอร์ที่ Tenjin ก่อน)' },
+      {
+        time: '19:30–21:00',
+        activity: '🤖 LaLaport Fukuoka — ν Gundam รอบกลางคืน',
+        note: 'Gundam สูง ~24.8 ม. ดูฟรี · โชว์ projection mapping บนผนังด้านหลัง 19:00–21:00 ทุกครึ่งชั่วโมง (ทันรอบ 19:30/20:00/20:30/21:00) · Gunpla/ของ limited ที่ Gundam Side-F — ร้านในห้างส่วนใหญ่ปิด ~21:00 ไปร้านนี้ก่อน · โชว์อาจงดตามสภาพอากาศ',
         categories: ['local'],
         priority: 'top',
         mapQuery: 'LaLaport Fukuoka',
       },
       {
-        time: '19:00–20:30',
-        activity: '🍽️ FINAL DINNER — ยังไม่ได้เลือกร้าน',
-        note: 'หาร้านใน/ใกล้ LaLaport ที่รับ 7 คนและจองได้ · ออกมาดูโชว์ projection mapping ของ Gundam (19:00–21:00 ทุกครึ่งชั่วโมง) · 24 พ.ย. เป็นวันหลังวันหยุดราชการ ร้านที่ปกติหยุดวันจันทร์อาจหยุดชดเชยวันนี้ — เช็คก่อนจอง',
-        categories: ['food'],
-        priority: 'top',
-      },
-      {
-        time: '21:00',
-        activity: 'กลับที่พัก — แพ็คกระเป๋า',
-        note: 'จองแท็กซี่ 3 คันไปสนามบินพรุ่งนี้ 06:15 (ถ้ายังไม่ได้จอง) · แยกของที่ทำ tax-free ไว้ในกระเป๋าที่หยิบง่าย',
-        alert: true,
-      },
-      {
         time: '21:30',
-        activity: 'เดินดูวิวริมน้ำ Nakasu (ถ้ายังมีแรง)',
-        note: 'ถ่ายรูปไฟริมแม่น้ำ + แถว Yatai — เดินแค่ริมน้ำ ไม่ต้องเข้าซอยลึก และอย่าตามคนยืนชวนเข้าร้าน (客引き) · พรุ่งนี้ตื่น 05:30',
-        categories: ['scenic', 'local'],
-        priority: 'optional',
-        mapQuery: 'Nakasu Yatai Fukuoka',
-        image: wikimediaImage('Fukuoka Nakasu2019.png', 'วิวไฟริมแม่น้ำ Nakasu ตอนกลางคืน'),
+        activity: 'กลับที่พัก — แพ็คกระเป๋า',
+        note: 'LaLaport อยู่ฝั่ง Hakata ใกล้ที่พัก · จองแท็กซี่ 3 คันไปสนามบินพรุ่งนี้ 06:15 (ถ้ายังไม่ได้จอง) · แยกของที่ทำ tax-free ไว้ในกระเป๋าที่หยิบง่าย · พรุ่งนี้ตื่น 05:30',
+        alert: true,
       },
     ],
     callout:
-      'ซื้อของฝากให้จบวันนี้ — เช้ามืดที่สนามบินร้านเปิดน้อย · ถ้า Day 5 ไป Sarakura ไม่ได้เพราะอากาศ ย้ายมาช่วงเย็นวันนี้แทน LaLaport ได้ (JR Hakata → Yahata ~1 ชม. ขึ้นก่อนพระอาทิตย์ตก แล้วกินมื้อเย็นแถว Yahata/Kokura)',
+      'ซื้อของฝากให้จบวันนี้ — เช้ามืดที่สนามบินร้านเปิดน้อย · ถ้า Day 5 ไป Sarakura ไม่ได้เพราะอากาศ ย้ายมาช่วงเย็นวันนี้แทน LaLaport ได้ (ไป Sarakura หลังกินที่ Rikaen จะดึกเกินไป — ต้องเลื่อน dinner หรือเปลี่ยนไปกินแถว Yahata/Kokura) · Ohori Park กับเดินริมน้ำ Nakasu ตัดออกวันนี้ เก็บเป็น optional',
   },
   {
     day: 7,
