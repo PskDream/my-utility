@@ -82,7 +82,12 @@ export const tripDays: TripDay[] = [
     activities: [
       { time: '07:35', activity: 'ถึงสนามบิน Fukuoka (International Terminal)', mapQuery: 'Fukuoka Airport International Terminal' },
       { time: '07:35–08:20', activity: 'ตม. + รับกระเป๋า', note: '7 คนเผื่อเวลาไว้ 45 นาที' },
-      { time: '08:20–09:00', activity: 'รับรถเช่า 2 คัน', note: 'เช็ครอบรถ ตั้ง ETC ตั้ง Google Maps' },
+      {
+        time: '08:20–09:00',
+        activity: 'รับรถเช่า 2 คัน — Suzuki Rent a Car',
+        note: 'เช็ครอบรถ ตั้ง ETC ตั้ง Google Maps',
+        bookingUrl: 'https://th.trip.com/carhire/to-japan-78/fukuoka-248/fuk/suzuki-rent-a-car/',
+      },
       { time: '09:00–09:30', activity: 'Lawson ซื้ออาหารเช้า + น้ำ' },
       { time: '09:30', activity: 'ออกเดินทางไป Hita' },
       {
