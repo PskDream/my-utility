@@ -289,12 +289,21 @@ export const tripDays: TripDay[] = [
       },
       {
         time: '11:30–12:45',
-        activity: '🥩🥩 Lunch — Akaushi ที่ Iwasaki',
+        activity: '🥩🥩 Lunch ตัวเลือก 1 — Akaushi ที่ Iwasaki',
         note: 'Must Eat ของ Aso · ~¥1,000–2,000/คน · Tabelog ~3.60/360+ รีวิว มีเมนู Akaushi Don หลายขนาดรวมถึง Mega — สำหรับ 7 คน ไม่แนะนำสั่งเหมือนกันหมด ให้แชร์ประมาณ Akaushi Don ×4-5 + Mega ×1 + เมนูอื่น ×1-2 แล้วแบ่งกันชิม · เปิด 11:00–15:00 (ปิดวันศุกร์ + พฤหัสที่ 2 ของเดือน — วันเสาร์เปิด) คิวยาวและของหมดได้ เลยย้ายมากินช่วงร้านเพิ่งเปิดก่อนไป Kusasenri · อยู่ Otohime ใกล้ Daikanbo ~20 นาที · โทร 0967-32-2677 · สำรอง: Nagomi Shokudo ถ้าคิวยาวเกินไป',
         categories: ['food'],
         priority: 'top',
         mapQuery: 'Aka Gyu-don Iwasaki Aso',
         tabelogUrl: 'https://tabelog.com/en/kumamoto/A4302/A430201/43013029/',
+      },
+      {
+        time: '11:30–12:45',
+        activity: '🥩 Lunch ตัวเลือก 2 — Aso Hanabishi (阿蘇 はなびし)',
+        note: 'เลือกอย่างใดอย่างหนึ่งกับ Iwasaki · ร้านโซบะ/อาหารท้องถิ่น ย่าน Miyaji · Tabelog ~3.45/179 รีวิว · ~¥2,000–2,999/คน · เปิด 11:00–16:00 ไม่ระบุวันหยุด · เมนูเด่นจากรีวิว: Akaushi & Beef Tendon Deluxe Rice Bowl, ข้าวหน้าเนื้อชุบทอด (牛カツ重) · ไม่มีที่จอดรถ (ต้องหาที่จอดสาธารณะใกล้ ๆ) · รับบัตรเครดิต/e-money/QR · โทร 0967-22-0896 (เว็บเขียนว่าสายปิดอยู่ ให้จองออนไลน์ผ่าน aso-hanabishi.com) · ยังไม่ได้เช็กระยะทางจาก Daikanbo/Kusasenri ตามเส้นทางจริง',
+        categories: ['food'],
+        priority: 'secondary',
+        mapQuery: 'Aso Hanabishi Aso',
+        tabelogUrl: 'https://tabelog.com/en/kumamoto/A4302/A430201/43017515/',
       },
       {
         time: '12:55–13:25',
