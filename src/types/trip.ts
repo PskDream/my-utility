@@ -17,9 +17,11 @@ export interface TripActivity {
   priority?: TripPriority
   alert?: boolean
   mapQuery?: string
+  mapUrl?: string
   image?: TripActivityImage
   tabelogUrl?: string
   bookingUrl?: string
+  payment?: string
 }
 
 export interface TripDay {

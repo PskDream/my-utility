@@ -40,7 +40,7 @@ defineProps<{ day: TripDay }>()
             </span>
             <a
               v-if="activity.mapQuery"
-              :href="googleMapsUrl(activity.mapQuery)"
+              :href="activity.mapUrl ?? googleMapsUrl(activity.mapQuery)"
               target="_blank"
               rel="noopener"
               title="เปิดใน Google Maps"
@@ -78,6 +78,12 @@ defineProps<{ day: TripDay }>()
             <span v-if="tripMapcodes[activity.mapQuery]?.approx" class="text-[0.7rem] text-[var(--p-text-muted-color)]"
               >(โดยประมาณ — เช็คกับ GPS)</span
             >
+          </div>
+          <div v-if="activity.payment" class="flex flex-wrap items-center gap-1.5">
+            <span class="text-[0.75rem] text-[var(--p-text-muted-color)]">💴 การจ่ายเงิน</span>
+            <span class="rounded bg-[var(--p-content-hover-background)] px-1.5 py-0.5 text-[0.85rem] font-semibold">{{
+              activity.payment
+            }}</span>
           </div>
           <div v-if="activity.note" class="text-[0.85rem] text-[var(--p-text-muted-color)]">
             {{ activity.note }}
