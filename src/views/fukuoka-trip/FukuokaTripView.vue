@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import Accordion from 'primevue/accordion'
 import AccordionPanel from 'primevue/accordionpanel'
 import AccordionHeader from 'primevue/accordionheader'
@@ -12,6 +12,16 @@ import TripMap from '@/components/fukuoka-trip/TripMap.vue'
 import { tripMeta, tripHighlights, tripDays } from '@/data/fukuoka-trip'
 
 const openDays = ref(['0'])
+const selectedDay = ref('all')
+
+const visibleDays = computed(() =>
+  selectedDay.value === 'all' ? tripDays : tripDays.filter((day) => String(day.day) === selectedDay.value),
+)
+
+// เลือกวันจากแผนที่ → กางรายละเอียดวันนั้นทันที
+watch(selectedDay, (value) => {
+  if (value !== 'all') openDays.value = [String(Number(value) - 1)]
+})
 </script>
 
 <template>
@@ -20,9 +30,9 @@ const openDays = ref(['0'])
     <h1 class="mb-4 text-2xl font-bold">{{ tripMeta.title }}</h1>
     <TripSummary :meta="tripMeta" />
     <TripHighlights :highlights="tripHighlights" />
-    <TripMap :days="tripDays" />
+    <TripMap v-model="selectedDay" :days="tripDays" />
     <Accordion v-model:value="openDays" multiple>
-      <AccordionPanel v-for="day in tripDays" :key="day.day" :value="String(day.day - 1)">
+      <AccordionPanel v-for="day in visibleDays" :key="day.day" :value="String(day.day - 1)">
         <AccordionHeader>
           <div class="flex flex-col gap-0.5 text-left">
             <span class="font-semibold">Day {{ day.day }} — {{ day.weekday }} {{ day.date }} | {{ day.route }}</span>

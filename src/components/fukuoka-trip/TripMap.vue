@@ -37,7 +37,8 @@ const stopsByDay = computed(() =>
 )
 
 const ALL = 'all'
-const selectedDay = ref<string>(ALL)
+// ใช้ร่วมกับตารางรายวันด้านล่าง — กดวันที่แผนที่แล้วรายละเอียดเปลี่ยนตาม
+const selectedDay = defineModel<string>({ default: ALL })
 const dayOptions = computed(() => [
   { label: 'ทั้งหมด', value: ALL },
   ...props.days.map((day) => ({ label: `Day ${day.day}`, value: String(day.day) })),
