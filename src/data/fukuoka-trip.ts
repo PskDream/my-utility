@@ -87,6 +87,7 @@ export const tripDays: TripDay[] = [
         activity: 'รับรถเช่า 2 คัน — Suzuki Rent a Car สาขา Fukuoka Airport International Terminal',
         note: 'ขึ้นรถรับส่งฟรีที่จุดรับส่งรถเช่า ชั้น 1 อาคาร International (~2 นาที, เปิด 8:00–18:45) · โทรสาขาตอนถึง (092-627-7139) · เช็ครอบรถ ตั้ง ETC ตั้ง Google Maps · สาขาอยู่ที่ Enoda 2-3-44 ไม่ใช่ในอาคารสนามบิน',
         mapQuery: 'Suzuki Rent a Car Fukuoka Airport International Terminal',
+        bookingUrl: 'https://th.trip.com/carhire/to-japan-78/fukuoka-248/fuk/suzuki-rent-a-car/',
       },
       { time: '09:00–09:30', activity: 'Lawson ซื้ออาหารเช้า + น้ำ' },
       { time: '09:30', activity: 'ออกเดินทางไป Hita' },
