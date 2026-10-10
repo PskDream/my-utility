@@ -3,6 +3,7 @@ import Message from 'primevue/message'
 import type { TripDay } from '@/types/trip'
 import { CATEGORY_INFO, PRIORITY_INFO } from '@/utils/tripCategories'
 import { googleMapsUrl } from '@/utils/maps'
+import { tripMapcodes } from '@/data/fukuoka-trip-coords'
 
 defineProps<{ day: TripDay }>()
 </script>
@@ -67,6 +68,16 @@ defineProps<{ day: TripDay }>()
             >
               {{ PRIORITY_INFO[activity.priority].emoji }} {{ PRIORITY_INFO[activity.priority].label }}
             </span>
+          </div>
+          <div v-if="activity.mapQuery && tripMapcodes[activity.mapQuery]" class="flex flex-wrap items-center gap-1.5">
+            <span class="text-[0.75rem] text-[var(--p-text-muted-color)]">🚗 Mapcode</span>
+            <span
+              class="rounded bg-[var(--p-content-hover-background)] px-1.5 py-0.5 font-mono text-[0.9rem] font-semibold tracking-wide select-all"
+              >{{ tripMapcodes[activity.mapQuery]?.code }}</span
+            >
+            <span v-if="tripMapcodes[activity.mapQuery]?.approx" class="text-[0.7rem] text-[var(--p-text-muted-color)]"
+              >(โดยประมาณ — เช็คกับ GPS)</span
+            >
           </div>
           <div v-if="activity.note" class="text-[0.85rem] text-[var(--p-text-muted-color)]">
             {{ activity.note }}

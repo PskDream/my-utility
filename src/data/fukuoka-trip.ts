@@ -84,8 +84,9 @@ export const tripDays: TripDay[] = [
       { time: '07:35–08:20', activity: 'ตม. + รับกระเป๋า', note: '7 คนเผื่อเวลาไว้ 45 นาที' },
       {
         time: '08:20–09:00',
-        activity: 'รับรถเช่า 2 คัน — Suzuki Rent a Car',
-        note: 'เช็ครอบรถ ตั้ง ETC ตั้ง Google Maps',
+        activity: 'รับรถเช่า 2 คัน — Suzuki Rent a Car สาขา Fukuoka Airport International Terminal',
+        note: 'ขึ้นรถรับส่งฟรีที่จุดรับส่งรถเช่า ชั้น 1 อาคาร International (~2 นาที, เปิด 8:00–18:45) · โทรสาขาตอนถึง (092-627-7139) · เช็ครอบรถ ตั้ง ETC ตั้ง Google Maps · สาขาอยู่ที่ Enoda 2-3-44 ไม่ใช่ในอาคารสนามบิน',
+        mapQuery: 'Suzuki Rent a Car Fukuoka Airport International Terminal',
         bookingUrl: 'https://th.trip.com/carhire/to-japan-78/fukuoka-248/fuk/suzuki-rent-a-car/',
       },
       { time: '09:00–09:30', activity: 'Lawson ซื้ออาหารเช้า + น้ำ' },
@@ -370,11 +371,12 @@ export const tripDays: TripDay[] = [
         mapQuery: 'Kora Taisha Kurume',
         image: wikimediaImage('View from Kora Taisha Shrine.jpg', 'วิวที่ราบ Chikugo จากบันได Kora Taisha'),
       },
-      { time: '17:15–18:15', activity: 'ขับ Kurume → Fukuoka', note: 'เติมน้ำมันเต็มถังก่อนคืนรถ' },
+      { time: '17:15–18:15', activity: 'ขับ Kurume → Fukuoka', note: 'เติมน้ำมันเต็มถังก่อนคืนรถ (สาขาปิด 19:00)' },
       {
         time: '18:15–19:00',
-        activity: 'คืนรถเช่า 2 คัน',
-        note: 'เช็คสาขาที่คืนรถ + เวลาปิดล่วงหน้า — ถ้าต้องคืนที่สนามบิน ต่อ Subway/แท็กซี่ไปที่พัก · ตั้งแต่ Day 5 ไม่มีรถแล้ว',
+        activity: 'คืนรถเช่า 2 คัน — Suzuki Rent a Car สาขา Fukuoka Airport International Terminal',
+        note: 'สาขาปิด 19:00 และรถรับส่งวิ่งถึง 18:45 — ต้องถึงสาขาก่อน ~18:30 เพื่อให้ทันตรวจรถ · จากสาขามีรถรับส่งฟรีไปสถานี Hakata (ทางออก Chikushi ~10 นาที) แต่ต้องโทรจองล่วงหน้า หรือใช้แท็กซี่ไปที่พัก · ตั้งแต่ Day 5 ไม่มีรถแล้ว · ทางเลือก: แวะที่พัก (Yoshizuka) ลงกระเป๋า/เช็คอินก่อนแล้วค่อยไปคืนรถ (ขับ ~10 นาที) — ต้องออกจาก Kora Taisha ราว 16:45 หรือตัด Ezu Lake และเช็คว่าที่พักมีที่จอดรถ · ⚠️ ใบจองระบุคืนรถ 23 พ.ย. ไม่ใช่ 22 พ.ย. — ยังไม่ได้ตัดสินใจ: แก้วันคืนรถกับ Suzuki เป็น 22 หรือเก็บรถถึง 23',
+        mapQuery: 'Suzuki Rent a Car Fukuoka Airport International Terminal',
         alert: true,
       },
       {

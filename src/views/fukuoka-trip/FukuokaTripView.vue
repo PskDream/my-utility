@@ -8,6 +8,7 @@ import BackHomeLink from '@/components/BackHomeLink.vue'
 import TripSummary from '@/components/fukuoka-trip/TripSummary.vue'
 import TripHighlights from '@/components/fukuoka-trip/TripHighlights.vue'
 import TripDaySchedule from '@/components/fukuoka-trip/TripDaySchedule.vue'
+import TripMap from '@/components/fukuoka-trip/TripMap.vue'
 import { tripMeta, tripHighlights, tripDays } from '@/data/fukuoka-trip'
 
 const openDays = ref(['0'])
@@ -19,6 +20,7 @@ const openDays = ref(['0'])
     <h1 class="mb-4 text-2xl font-bold">{{ tripMeta.title }}</h1>
     <TripSummary :meta="tripMeta" />
     <TripHighlights :highlights="tripHighlights" />
+    <TripMap :days="tripDays" />
     <Accordion v-model:value="openDays" multiple>
       <AccordionPanel v-for="day in tripDays" :key="day.day" :value="String(day.day - 1)">
         <AccordionHeader>
