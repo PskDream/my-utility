@@ -30,6 +30,8 @@ export const tripCoords: Record<string, [number, number]> = {
   // Kitsuki
   'Kitsuki Castle Town Oita': [33.4189, 131.6222],
   'Kitsuki Castle Oita': [33.4154, 131.6259],
+  // พิกัดจากหน้า Tabelog ของร้าน
+  'Shokudoen Honten Kitsuki': [33.4182, 131.6235],
 
   // Beppu
   '6-3 Noguchi Motomachi Beppu': [33.2795, 131.4985],
@@ -46,6 +48,8 @@ export const tripCoords: Record<string, [number, number]> = {
   'Chojabaru Kuju': [33.124, 131.233],
   'Daikanbo Aso': [32.9878, 131.048],
   'Aka Gyu-don Iwasaki Aso': [32.958, 131.064],
+  // พิกัดจากหน้า Tabelog ของร้าน
+  'Aso Hanabishi Aso': [32.9495, 131.1169],
   'Kusasenri Aso': [32.8836, 131.064],
 
   // Kumamoto
@@ -105,5 +109,10 @@ export const tripMapcodes: Record<string, { code: string; approx?: boolean }> = 
   'Suizenji Jojuen Kumamoto': { code: '29 433 434*82' },
   'Ezu Lake Kumamoto': { code: '29 345 857*62', approx: true },
   'Kumamoto Ramen Kokutei Honten': { code: '29 398 818*32', approx: true },
+  // พิกัดจาก pin ของ Tabelog ผ่าน api.japanmapcode.com — ไม่ใช่รหัสทางการของร้าน
+  'Shokudoen Honten Kitsuki': { code: '878 570 693*27' },
+  'Kitsuki Castle Town Oita': { code: '46 899 808*78', approx: true },
+  'Kitsuki Castle Oita': { code: '878 570 402*88', approx: true },
+  'Aso Hanabishi Aso': { code: '256 704 489*66' },
   'Kora Taisha Kurume': { code: '37 473 695*23' },
 }

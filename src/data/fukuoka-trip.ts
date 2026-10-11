@@ -80,7 +80,12 @@ export const tripDays: TripDay[] = [
     feel: '🏘️ Hita old town · 🚶 เดินเล่น · 🍶 โรงสาเก · 🍜 Hita Yakisoba · 🚗 Scenic drive · 🏨 Beppu',
     driveInfo: 'Fukuoka→Asakura ~1 ชม. · Asakura→Hita ~30–35 นาที (Oita Expressway) · Hita→Beppu ~1.5 ชม. (Oita Expressway)',
     activities: [
-      { time: '07:35', activity: 'ถึงสนามบิน Fukuoka (International Terminal)', mapQuery: 'Fukuoka Airport International Terminal' },
+      {
+        time: '07:35',
+        activity: 'ถึงสนามบิน Fukuoka (International Terminal)',
+        mapQuery: 'Fukuoka Airport International Terminal',
+        image: wikimediaImage('Fukuoka Airport - Terminal 3 - 01.JPG', 'อาคารผู้โดยสารระหว่างประเทศ สนามบิน Fukuoka'),
+      },
       { time: '07:35–08:20', activity: 'ตม. + รับกระเป๋า', note: '7 คนเผื่อเวลาไว้ 45 นาที' },
       {
         time: '08:20–09:00',
@@ -180,6 +185,7 @@ export const tripDays: TripDay[] = [
         categories: ['local', 'walking', 'scenic'],
         priority: 'secondary',
         mapQuery: 'Kitsuki Castle Town Oita',
+        image: wikimediaImage('Suya-no-Saka.jpg', 'ถนนลาด Suya-no-saka ในเมืองปราสาท Kitsuki'),
       },
       {
         time: '10:45–11:30',
@@ -188,12 +194,15 @@ export const tripDays: TripDay[] = [
         categories: ['scenic', 'local'],
         priority: 'optional',
         mapQuery: 'Kitsuki Castle Oita',
+        image: wikimediaImage('Kitsuki Castle 01.jpg', 'หอปราสาท Kitsuki บนเนินริมแม่น้ำ'),
       },
       {
         time: '11:30–12:30',
-        activity: 'Lunch — ที่ Kitsuki (ยังไม่เลือกร้าน)',
-        note: 'ตัวเลือก: Shokudoen Honten (食道園 本店, ยากินิกุ · Tabelog 3.21/19 รีวิว · ~¥2,000–2,999/คน (รีวิวจริงราว ¥5,000–5,999) · เปิด 11:00–21:00 ทุกวัน ไม่ระบุวันหยุด · เมนูเด่น: ลิ้นวัวย่างเกลือ · 杵築市杵築錦城665-104 · โทร 0978-62-2658 แต่เว็บเขียนว่าสายปิดอยู่ ให้จองออนไลน์) · Wakaeiya (若栄屋, ปลาหิน่าชาซึเกะ 11:00–15:00) · Sabo Ichibankan (茶房 一番館, ข้าวหน้าเนื้อ Kitsuki 10:00–22:00) · Kitsuki Furusato Sangyokan (杵築ふるさと産業館, 09:30–17:30) · เวลาเปิดของร้านอื่นจากเว็บรวมร้าน ยังไม่ยืนยัน',
+        activity: 'Lunch — Shokudoen Honten (食道園 本店) ที่ Kitsuki',
+        note: 'ยากินิกุ · Tabelog 3.21/19 รีวิว · ~¥2,000–2,999/คน (รีวิวจริงราว ¥5,000–5,999) · เปิด 11:00–21:00 ทุกวัน ไม่ระบุวันหยุด · เมนูเด่น: ลิ้นวัวย่างเกลือ · 杵築市杵築錦城665-104 · โทร 0978-62-2658 แต่เว็บเขียนว่าสายปิดอยู่ ให้จองออนไลน์ · สำหรับ 7 คน แนะนำจองล่วงหน้า · สำรองถ้าเต็ม: Wakaeiya (若栄屋, ปลาหิน่าชาซึเกะ 11:00–15:00) · Sabo Ichibankan (茶房 一番館, ข้าวหน้าเนื้อ 10:00–22:00)',
         categories: ['food', 'local'],
+        priority: 'secondary',
+        mapQuery: 'Shokudoen Honten Kitsuki',
         tabelogUrl: 'https://tabelog.com/en/oita/A4403/A440301/44005965/',
       },
       { time: '12:30', activity: 'ออกเดินทาง Kitsuki → Kannawa', note: 'ขับ ~45 นาที (ประมาณเอง)' },
@@ -236,7 +245,7 @@ export const tripDays: TripDay[] = [
         image: wikimediaImage('Toriten.JPG', 'จานทอริเท็น (toriten) ไก่ทอดสไตล์ Oita'),
       },
     ],
-    callout: 'วันนี้อาหาร = มื้อกลางวันที่ Kitsuki (ยังไม่เลือกร้าน) + Toriten · เช้าไป Kitsuki ต้องออก 08:30 — ถ้าเวลาเบียดให้ตัด Kitsuki Castle และ Yukemuri Observatory ก่อน',
+    callout: 'วันนี้อาหาร = มื้อกลางวัน Shokudoen Honten ที่ Kitsuki (ยากินิกุ) + Toriten · เช้าไป Kitsuki ต้องออก 08:30 — ถ้าเวลาเบียดให้ตัด Kitsuki Castle และ Yukemuri Observatory ก่อน',
   },
   {
     day: 3,
