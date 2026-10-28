@@ -16,6 +16,8 @@ export const tripCoords: Record<string, [number, number]> = {
   'Ohori Park Fukuoka': [33.586, 130.377],
   'LaLaport Fukuoka': [33.5716, 130.432],
   'Nakasu Yatai Fukuoka': [33.5925, 130.406],
+  // โดยประมาณจากย่านสถานี Gofukumachi
+  'Japan Beef Center Gofukumachi Fukuoka': [33.5921, 130.4129],
 
   // Asakura
   'Himiko Roman-no-yu Asakura': [33.4149, 130.6596],
