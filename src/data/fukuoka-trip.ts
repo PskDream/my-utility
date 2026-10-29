@@ -157,6 +157,12 @@ export const tripDays: TripDay[] = [
         mapQuery: '6-3 Noguchi Motomachi Beppu',
       },
       {
+        time: '16:45–18:30',
+        activity: 'ช้อป Uniqlo — Yume Town Beppu (ชั้น 3)',
+        note: '楠町382-7 Kusunoki-cho, Beppu · เปิด 10:00–21:00 (ตามเว็บรวมข้อมูลร้านค้า เช็ก store locator ของ Uniqlo อีกครั้งก่อนไป) · เดินจาก JR Beppu Station ~10 นาที มีที่จอดรอบห้าง (ระยะจากที่พักยังไม่ได้เช็ก) · ซื้อของกันหนาวสำหรับ 21 พ.ย. (Aso) และ 23 พ.ย. (Sarakura) — ไซส์ใหญ่อาจไม่มีในร้าน เช็กตารางไซส์ที่ uniqlo.com/jp ก่อน · นี่คือโอกาสสุดท้ายก่อนขึ้น Aso (พรุ่งนี้ 20 พ.ย. ยังแทรกเย็นได้ถ้าวันนี้ไม่ทัน)',
+        mapQuery: 'Uniqlo Yume Town Beppu',
+      },
+      {
         time: '19:00',
         activity: 'Dinner — Hasegawa (ย่านสถานี Beppu)',
         note: 'ตามหมุด Google Maps "Hasegawa" ย่านสถานี Beppu — เป็นร้านอะไร/เวลาเปิด/วิธีจ่ายเงินยังไม่ได้ยืนยัน (อาจเป็น 中華蕎麦 はせ川 ร้านเส้นสดตัดมือ) เช็กรีวิวและเวลาเปิดก่อนไป · อาหารเบา ๆ — เก็บ Toriten ไว้พรุ่งนี้ที่ Beppu และเก็บมื้อเนื้อจริงจังไว้ที่ Akaushi วันที่ 21 พ.ย.',
