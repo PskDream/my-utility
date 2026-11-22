@@ -24,6 +24,12 @@ export interface TripActivity {
   payment?: string
 }
 
+export interface TripAlternatePlan {
+  title: string
+  note?: string
+  activities: TripActivity[]
+}
+
 export interface TripDay {
   day: number
   weekday: string
@@ -33,6 +39,8 @@ export interface TripDay {
   feel?: string
   driveInfo?: string
   activities: TripActivity[]
+  mainPlanLabel?: string
+  alternatePlan?: TripAlternatePlan
   callout?: string
 }
 

@@ -1,110 +1,127 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import Message from 'primevue/message'
 import type { TripDay } from '@/types/trip'
 import { CATEGORY_INFO, PRIORITY_INFO } from '@/utils/tripCategories'
 import { googleMapsUrl } from '@/utils/maps'
 import { tripMapcodes } from '@/data/fukuoka-trip-coords'
 
-defineProps<{ day: TripDay }>()
+const props = defineProps<{ day: TripDay }>()
+
+const groups = computed(() => [
+  { title: props.day.alternatePlan ? props.day.mainPlanLabel : undefined, note: undefined as string | undefined, activities: props.day.activities },
+  ...(props.day.alternatePlan
+    ? [{ title: props.day.alternatePlan.title, note: props.day.alternatePlan.note, activities: props.day.alternatePlan.activities }]
+    : []),
+])
 </script>
 
 <template>
   <div class="flex flex-col gap-3">
     <p v-if="day.feel" class="text-[0.9rem] text-[var(--p-text-muted-color)]">{{ day.feel }}</p>
-    <div class="flex flex-col divide-y divide-[var(--p-content-border-color)]">
+    <div v-for="(group, groupIndex) in groups" :key="groupIndex" class="flex flex-col gap-2">
       <div
-        v-for="(activity, index) in day.activities"
-        :key="index"
-        class="flex gap-3 py-2 pl-2"
-        :class="[
-          activity.alert
-            ? 'rounded-md bg-[var(--p-orange-50,#fff7ed)] px-2 dark:bg-[var(--p-orange-950,#431407)]'
-            : '',
-          activity.priority === 'top' ? 'border-l-4 border-[var(--p-yellow-500,#eab308)]' : '',
-          activity.priority === 'optional' ? 'border-l-4 border-dashed border-[var(--p-content-border-color)] opacity-70' : '',
-        ]"
+        v-if="group.title"
+        class="mt-1 rounded-md bg-[var(--p-content-hover-background)] px-3 py-1.5 text-[0.9rem] font-semibold"
       >
-        <div class="w-[92px] flex-shrink-0 text-[0.85rem] text-[var(--p-text-muted-color)]">
-          {{ activity.time }}
-        </div>
-        <div class="flex flex-1 flex-col gap-0.5">
-          <div class="flex flex-wrap items-center gap-1.5">
-            <span :class="activity.priority === 'top' ? 'font-semibold' : ''">{{ activity.activity }}</span>
-            <span
-              v-for="category in activity.categories"
-              :key="category"
-              :title="CATEGORY_INFO[category].label"
-              class="text-[0.8rem]"
-            >
-              {{ CATEGORY_INFO[category].emoji }}
-            </span>
+        {{ group.title }}
+      </div>
+      <p v-if="group.note" class="text-[0.85rem] text-[var(--p-text-muted-color)]">{{ group.note }}</p>
+      <div class="flex flex-col divide-y divide-[var(--p-content-border-color)]">
+        <div
+          v-for="(activity, index) in group.activities"
+          :key="index"
+          class="flex gap-3 py-2 pl-2"
+          :class="[
+            activity.alert
+              ? 'rounded-md bg-[var(--p-orange-50,#fff7ed)] px-2 dark:bg-[var(--p-orange-950,#431407)]'
+              : '',
+            activity.priority === 'top' ? 'border-l-4 border-[var(--p-yellow-500,#eab308)]' : '',
+            activity.priority === 'optional' ? 'border-l-4 border-dashed border-[var(--p-content-border-color)] opacity-70' : '',
+          ]"
+        >
+          <div class="w-[92px] flex-shrink-0 text-[0.85rem] text-[var(--p-text-muted-color)]">
+            {{ activity.time }}
+          </div>
+          <div class="flex flex-1 flex-col gap-0.5">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span :class="activity.priority === 'top' ? 'font-semibold' : ''">{{ activity.activity }}</span>
+              <span
+                v-for="category in activity.categories"
+                :key="category"
+                :title="CATEGORY_INFO[category].label"
+                class="text-[0.8rem]"
+              >
+                {{ CATEGORY_INFO[category].emoji }}
+              </span>
+              <a
+                v-if="activity.mapQuery"
+                :href="activity.mapUrl ?? googleMapsUrl(activity.mapQuery)"
+                target="_blank"
+                rel="noopener"
+                title="เปิดใน Google Maps"
+                class="pi pi-map-marker text-[0.8rem] text-[var(--p-primary-color)]"
+              />
+              <a
+                v-if="activity.tabelogUrl"
+                :href="activity.tabelogUrl"
+                target="_blank"
+                rel="noopener"
+                title="ดูรีวิว/เรตติ้งใน Tabelog"
+                class="pi pi-external-link text-[0.8rem] text-[var(--p-primary-color)]"
+              />
+              <a
+                v-if="activity.bookingUrl"
+                :href="activity.bookingUrl"
+                target="_blank"
+                rel="noopener"
+                title="ดูรายละเอียดการจอง"
+                class="pi pi-car text-[0.8rem] text-[var(--p-primary-color)]"
+              />
+              <span
+                v-if="activity.priority"
+                class="rounded-full bg-[var(--p-content-hover-background)] px-2 py-0.5 text-[0.7rem] whitespace-nowrap text-[var(--p-text-muted-color)]"
+              >
+                {{ PRIORITY_INFO[activity.priority].emoji }} {{ PRIORITY_INFO[activity.priority].label }}
+              </span>
+            </div>
+            <div v-if="activity.mapQuery && tripMapcodes[activity.mapQuery]" class="flex flex-wrap items-center gap-1.5">
+              <span class="text-[0.75rem] text-[var(--p-text-muted-color)]">🚗 Mapcode</span>
+              <span
+                class="rounded bg-[var(--p-content-hover-background)] px-1.5 py-0.5 font-mono text-[0.9rem] font-semibold tracking-wide select-all"
+                >{{ tripMapcodes[activity.mapQuery]?.code }}</span
+              >
+              <span v-if="tripMapcodes[activity.mapQuery]?.approx" class="text-[0.7rem] text-[var(--p-text-muted-color)]"
+                >(โดยประมาณ — เช็คกับ GPS)</span
+              >
+            </div>
+            <div v-if="activity.payment" class="flex flex-wrap items-center gap-1.5">
+              <span class="text-[0.75rem] text-[var(--p-text-muted-color)]">💴 การจ่ายเงิน</span>
+              <span class="rounded bg-[var(--p-content-hover-background)] px-1.5 py-0.5 text-[0.85rem] font-semibold">{{
+                activity.payment
+              }}</span>
+            </div>
+            <div v-if="activity.note" class="text-[0.85rem] text-[var(--p-text-muted-color)]">
+              {{ activity.note }}
+            </div>
             <a
-              v-if="activity.mapQuery"
-              :href="activity.mapUrl ?? googleMapsUrl(activity.mapQuery)"
+              v-if="activity.image"
+              :href="activity.image.creditUrl"
               target="_blank"
               rel="noopener"
-              title="เปิดใน Google Maps"
-              class="pi pi-map-marker text-[0.8rem] text-[var(--p-primary-color)]"
-            />
-            <a
-              v-if="activity.tabelogUrl"
-              :href="activity.tabelogUrl"
-              target="_blank"
-              rel="noopener"
-              title="ดูรีวิว/เรตติ้งใน Tabelog"
-              class="pi pi-external-link text-[0.8rem] text-[var(--p-primary-color)]"
-            />
-            <a
-              v-if="activity.bookingUrl"
-              :href="activity.bookingUrl"
-              target="_blank"
-              rel="noopener"
-              title="ดูรายละเอียดการจอง"
-              class="pi pi-car text-[0.8rem] text-[var(--p-primary-color)]"
-            />
-            <span
-              v-if="activity.priority"
-              class="rounded-full bg-[var(--p-content-hover-background)] px-2 py-0.5 text-[0.7rem] whitespace-nowrap text-[var(--p-text-muted-color)]"
+              class="mt-1 block w-fit"
             >
-              {{ PRIORITY_INFO[activity.priority].emoji }} {{ PRIORITY_INFO[activity.priority].label }}
-            </span>
+              <img
+                :src="activity.image.url"
+                :alt="activity.image.alt"
+                loading="lazy"
+                class="h-36 max-w-full rounded-md object-cover sm:h-44"
+              />
+              <span class="mt-0.5 block text-[0.7rem] text-[var(--p-text-muted-color)]"
+                >ภาพ: {{ activity.image.creditLabel }}</span
+              >
+            </a>
           </div>
-          <div v-if="activity.mapQuery && tripMapcodes[activity.mapQuery]" class="flex flex-wrap items-center gap-1.5">
-            <span class="text-[0.75rem] text-[var(--p-text-muted-color)]">🚗 Mapcode</span>
-            <span
-              class="rounded bg-[var(--p-content-hover-background)] px-1.5 py-0.5 font-mono text-[0.9rem] font-semibold tracking-wide select-all"
-              >{{ tripMapcodes[activity.mapQuery]?.code }}</span
-            >
-            <span v-if="tripMapcodes[activity.mapQuery]?.approx" class="text-[0.7rem] text-[var(--p-text-muted-color)]"
-              >(โดยประมาณ — เช็คกับ GPS)</span
-            >
-          </div>
-          <div v-if="activity.payment" class="flex flex-wrap items-center gap-1.5">
-            <span class="text-[0.75rem] text-[var(--p-text-muted-color)]">💴 การจ่ายเงิน</span>
-            <span class="rounded bg-[var(--p-content-hover-background)] px-1.5 py-0.5 text-[0.85rem] font-semibold">{{
-              activity.payment
-            }}</span>
-          </div>
-          <div v-if="activity.note" class="text-[0.85rem] text-[var(--p-text-muted-color)]">
-            {{ activity.note }}
-          </div>
-          <a
-            v-if="activity.image"
-            :href="activity.image.creditUrl"
-            target="_blank"
-            rel="noopener"
-            class="mt-1 block w-fit"
-          >
-            <img
-              :src="activity.image.url"
-              :alt="activity.image.alt"
-              loading="lazy"
-              class="h-36 max-w-full rounded-md object-cover sm:h-44"
-            />
-            <span class="mt-0.5 block text-[0.7rem] text-[var(--p-text-muted-color)]"
-              >ภาพ: {{ activity.image.creditLabel }}</span
-            >
-          </a>
         </div>
       </div>
     </div>
