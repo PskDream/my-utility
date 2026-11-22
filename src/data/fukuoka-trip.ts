@@ -476,7 +476,7 @@ export const tripDays: TripDay[] = [
     route: 'Fukuoka (ห้าง Tenjin/Hakata) → Yahata (Sarakura) → Fukuoka → Nakasu → Tenjin',
     theme: 'Shopping + Sunset/Night View + Yakiniku + Yatai + Jazz',
     feel: '🛍️ ห้างแบรนด์ Tenjin + Hakata · 🌃 Sarakura Sunset + Night View · 🥩 Japan Beef Center · 🍢 Yatai ริมน้ำ Nakasu · 🎷 Jazz + 🍺 Pub',
-    driveInfo: 'ไม่มีรถ — JR Hakata → Yahata ~1 ชม. · ระหว่างจุดใช้แท็กซี่ 2 คัน/บัส · subway Tenjin → Hakata ~5 นาที (หรือเดินผ่านใต้ดิน/แท็กซี่)',
+    driveInfo: 'ไม่มีรถ — JR Yoshizuka → Yahata ~55 นาที · ระหว่างจุดใช้แท็กซี่ 2 คัน/บัส · subway Tenjin → Hakata ~5 นาที (หรือเดินผ่านใต้ดิน/แท็กซี่)',
     activities: [
       {
         time: '09:30–10:00',
@@ -487,7 +487,7 @@ export const tripDays: TripDay[] = [
       {
         time: '10:00–12:00',
         activity: '🛍️ ห้างแบรนด์ Tenjin — Iwataya / Daimaru / Parco / Solaria / Mitsukoshi',
-        note: 'ย่าน Tenjin ห้างอยู่ติดกัน เดินถึงกันหมด + ถนนใต้ดิน Tenjin Chikagai · แบรนด์ญี่ปุ่น เสื้อผ้า รองเท้า เครื่องสำอาง · Parco มี Tower Records · โมเดล/ของสะสมที่ Mandarake Fukuoka · 💿 ร้านแผ่นเสียง: Tower Records Fukuoka Parco ชั้น 6 (~10:00–20:30 เช็กเวลาก่อนไป) · ถ้าเหลือเวลาเดินไป Daimyo: Catfish Records (แจ๊ส เข้ากับ Browny คืนนี้), Border Line Records (ชั้น 2 ตึก Tachibana, Daimyo 1-14-14), Seventies Records (พังก์/ร็อก ชั้น 3) · Face Records อาจมีสาขา Tenjin (ยังไม่ยืนยันว่าเปิดหรือยัง) · ร้านเล็กใน Daimyo เช็ก Google Maps ว่าเปิดวันหยุดราชการไหม · พกพาสปอร์ตไว้ทำ tax-free (เคาน์เตอร์ tax-free อยู่ในแต่ละห้าง) · ของหนักฝาก locker',
+        note: 'ย่าน Tenjin ห้างอยู่ติดกัน เดินถึงกันหมด + ถนนใต้ดิน Tenjin Chikagai · แบรนด์ญี่ปุ่น เสื้อผ้า รองเท้า เครื่องสำอาง · Parco มี Tower Records · โมเดล/ของสะสมที่ Mandarake Fukuoka · 💿 ร้านแผ่นเสียง: Tower Records Fukuoka Parco ชั้น 6 (~10:00–20:30 เช็กเวลาก่อนไป) · ถ้าเหลือเวลาเดินไป Daimyo: Catfish Records (แจ๊ส เข้ากับ Browny คืนนี้), Border Line Records (ชั้น 2 ตึก Tachibana, Daimyo 1-14-14), Seventies Records (พังก์/ร็อก ชั้น 3) · Face Records อาจมีสาขา Tenjin (ยังไม่ยืนยันว่าเปิดหรือยัง) · ร้านเล็กใน Daimyo เช็ก Google Maps ว่าเปิดวันหยุดราชการไหม · พกพาสปอร์ตไว้ทำ tax-free (เคาน์เตอร์ tax-free อยู่ในแต่ละห้าง)',
         categories: ['local'],
         priority: 'top',
         mapQuery: 'Iwataya Tenjin Fukuoka',
@@ -501,17 +501,24 @@ export const tripDays: TripDay[] = [
         priority: 'secondary',
       },
       {
-        time: '13:00–14:30',
+        time: '13:00–14:00',
         activity: '🛍️ Hakata — Hakata Hankyu + Amu Plaza (ติด JR Hakata)',
-        note: 'ช้อปรอบสุดท้ายติดสถานี ไม่ต้องเดินทางเพิ่ม · ห้างเปิดต่อเนื่องถึงเย็น · เก็บของที่ locker ที่ Hakata ก่อนขึ้น JR ไป Sarakura (ไม่ต้องหิ้วขึ้นเขา) · ของฝากขนมไม่ต้องซื้อวันนี้ (ไปซื้อที่สนามบิน)',
+        note: 'ช้อปรอบสุดท้ายติดสถานี ไม่ต้องเดินทางเพิ่ม · ต้องเลิกช้อปให้ทัน 14:00 เพื่อพาของกลับที่พัก · ของฝากขนมไม่ต้องซื้อวันนี้ (ไปซื้อที่สนามบิน)',
         categories: ['local'],
         priority: 'top',
         mapQuery: 'Hakata Hankyu Fukuoka',
       },
       {
-        time: '14:45–16:15',
-        activity: 'JR Hakata → Yahata แล้วต่อไปสถานีเคเบิลคาร์ Sarakura',
-        note: 'JR Hakata → Yahata ~1 ชม. · จาก Yahata แท็กซี่/shuttle ไปสถานีเคเบิลคาร์ (เช็คตาราง) · วันหยุดราชการคิวขึ้นยาว',
+        time: '14:00–14:30',
+        activity: '🏠 เอาของกลับที่พัก (Yoshizuka)',
+        note: 'ที่พัก HALEIE空港通り (Yoshizuka 3-3-30) เช็กอินไว้แล้วตั้งแต่ 22 พ.ย. เข้าห้องได้เลย · แท็กซี่ 2 คันจาก Hakata ~5–10 นาที (ประมาณ ห่างราว 1.5 กม.) · วางถุงช้อป เปลี่ยนรองเท้า/หยิบแจ็คเก็ตสำหรับ Sarakura · ไปกินเนื้อ ไนท์ไลฟ์ และกลับมาได้มือเปล่า',
+        mapQuery: 'HALEIE Yoshizuka Fukuoka',
+        mapUrl: 'https://maps.app.goo.gl/SdaZrktpUdE9vX6E6',
+      },
+      {
+        time: '14:30–16:15',
+        activity: 'JR Yoshizuka → Yahata แล้วต่อไปสถานีเคเบิลคาร์ Sarakura',
+        note: 'ขึ้น JR สาย Kagoshima ที่ Yoshizuka (รถ Rapid อาจไม่จอด ต้องใช้รถธรรมดา — เช็ก Google Maps) → Yahata ~55 นาที (ประมาณ) · จาก Yahata แท็กซี่/shuttle ไปสถานีเคเบิลคาร์ (เช็คตาราง) · วันหยุดราชการคิวขึ้นยาว',
       },
       {
         time: '16:30–18:30',
@@ -562,7 +569,7 @@ export const tripDays: TripDay[] = [
       },
     ],
     callout:
-      '23 พ.ย. เป็นวันหยุดราชการ (勤労感謝の日) คนเยอะทุกจุด · Sarakura ต้องเป็นวันนี้เท่านั้น เพราะเคเบิลคาร์ปิดวันอังคาร (24 พ.ย.) · ถ้าช้ากว่าแผน ตัดเวลาช้อปช่วงบ่ายก่อน ต้องออกจาก Hakata ไม่เกิน ~14:45 · วิว Sarakura ขึ้นกับอากาศ — ถ้าฟ้าปิด/ฝนตกให้เปลี่ยนเป็นช้อปที่ Canal City/Tenjin ต่อแทน แล้วกินเนื้อตามเวลาเดิม',
+      '23 พ.ย. เป็นวันหยุดราชการ (勤労感謝の日) คนเยอะทุกจุด · Sarakura ต้องเป็นวันนี้เท่านั้น เพราะเคเบิลคาร์ปิดวันอังคาร (24 พ.ย.) · ถ้าช้ากว่าแผน ตัดเวลาช้อปช่วงบ่ายก่อน ต้องออกจากที่พักไป JR Yoshizuka ไม่เกิน ~14:30 · วิว Sarakura ขึ้นกับอากาศ — ถ้าฟ้าปิด/ฝนตกให้เปลี่ยนเป็นช้อปที่ Canal City/Tenjin ต่อแทน แล้วกินเนื้อตามเวลาเดิม',
   },
   {
     day: 6,
