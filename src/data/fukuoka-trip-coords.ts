@@ -9,7 +9,6 @@ export const tripCoords: Record<string, [number, number]> = {
   'Tenjin Yatai Fukuoka': [33.5905, 130.399],
   'JAZZ BAR Browny Tenjin Fukuoka': [33.588, 130.396],
   'HUB Fukuoka Daimyo': [33.5885, 130.3935],
-  'Yanagibashi Rengo Market Fukuoka': [33.5835, 130.4045],
   'Daimyo Fukuoka': [33.5875, 130.3925],
   'Shin Shin Ramen Tenjin Fukuoka': [33.588, 130.3975],
   'Mandarake Fukuoka': [33.5866, 130.3955],
@@ -65,10 +64,8 @@ export const tripCoords: Record<string, [number, number]> = {
   // Kurume
   'Kora Taisha Kurume': [33.3062, 130.565],
 
-  // Munakata / Kitakyushu
-  'Miyajidake Shrine Fukutsu': [33.78, 130.4895],
-  'Michi-no-eki Munakata': [33.8352, 130.5037],
-  'Munakata Taisha Hetsumiya': [33.8314, 130.5141],
+  // Dazaifu / Kitakyushu
+  'Dazaifu Tenmangu': [33.5215, 130.5349],
   'Sarakurayama Cable Car Sanroku Station': [33.8606, 130.804],
 }
 
