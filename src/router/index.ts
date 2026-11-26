@@ -18,6 +18,11 @@ const router = createRouter({
       name: 'fukuoka-trip',
       component: () => import('@/views/fukuoka-trip/FukuokaTripView.vue'),
     },
+    {
+      path: '/splitwise',
+      name: 'splitwise',
+      component: () => import('@/views/splitwise/SplitwiseView.vue'),
+    },
   ],
 })
 

@@ -15,4 +15,11 @@ export const tools: Tool[] = [
     icon: 'pi pi-map',
     route: '/fukuoka-trip',
   },
+  {
+    id: 'splitwise',
+    name: 'สรุป Splitwise',
+    description: 'อัปโหลด CSV จาก Splitwise ดูค่าใช้จ่ายส่วนกลางต่อคน และยอดจริงของทุกคน',
+    icon: 'pi pi-chart-bar',
+    route: '/splitwise',
+  },
 ]
