@@ -18,7 +18,7 @@ export const tools: Tool[] = [
   {
     id: 'splitwise',
     name: 'สรุป Splitwise',
-    description: 'อัปโหลด CSV จาก Splitwise ดูค่าใช้จ่ายส่วนกลางต่อคน และยอดจริงของทุกคน',
+    description: 'สรุปค่าใช้จ่ายทริปจาก Splitwise ดูส่วนกลางต่อคน และยอดจริงของทุกคน',
     icon: 'pi pi-chart-bar',
     route: '/splitwise',
   },
